@@ -19,8 +19,8 @@ jobs:
           node-version: "14.21.3"
           registry-url: "https://registry.npmjs.org"
 
-      - run: npm install && ls -lha
-      # - run: npm run build
-      # - run: npm publish
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+      - run: npm install
+
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
