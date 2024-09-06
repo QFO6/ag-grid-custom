@@ -1,0 +1,85 @@
+{
+  "name": "@QFO6/ag-grid-custom",
+  "description": "ag-grid vue2 custom components",
+  "version": "0.1.9",
+  "license": "MIT",
+  "private": false,
+  "author": {
+    "name": "QFO6",
+    "email": "QFO6@github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QFO6/ag-grid-custom"
+  },
+  "bugs": "https://github.com/QFO6/ag-grid-custom/issues",
+  "keywords": [
+    "ag-grid",
+    "table",
+    "vue 2.x",
+    "custom"
+  ],
+  "files": [
+    "dist/*",
+    "docs/*"
+  ],
+  "main": "dist/ag-grid-custom.common.js",
+  "scripts": {
+    "bump:patch": "npm version patch -m 'Bump patch version'",
+    "bump:minor": "npm version patch -m 'Bump minor version'",
+    "bump:major": "npm version patch -m 'Bump major version'",
+    "serve": "vue-cli-service serve",
+    "build": "npm run gen:doc && npm run build:core",
+    "gen:doc": "vuese gen",
+    "serve:doc": "vuese serve --open",
+    "build:core": "vue-cli-service build --skip-plugins vuetify --target lib --name AgCustom --filename ag-grid-custom lib/index.js",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint",
+    "prepare": "npm run build:core"
+  },
+  "dependencies": {
+    "ag-grid-community": "^26.2.0",
+    "ag-grid-enterprise": "^26.2.0",
+    "ag-grid-vue": "^26.2.0",
+    "core-js": "^3.6.5",
+    "lodash": "^4.17.21",
+    "papaparse": "^5.3.2",
+    "screenfull": "^5.1.0",
+    "sheetjs-style": "^0.15.8",
+    "vue": "^2.6.11",
+    "vue-property-decorator": "^8.0.0",
+    "vuetify": "^2.6.0"
+  },
+  "devDependencies": {
+    "@mdi/font": "^7.0.96",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.13",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/test-utils": "^1.0.3",
+    "@vuese/cli": "^2.14.3",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "lint-staged": "^9.5.0",
+    "lodash": "^4.17.21",
+    "prettier": "^2.2.1",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-vuetify": "^2.5.1",
+    "vue-router": "3",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.7.0"
+  },
+  "peerDependencies": {},
+  "gitHooks": {},
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
